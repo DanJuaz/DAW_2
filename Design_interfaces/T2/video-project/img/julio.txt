@@ -1,0 +1,13 @@
+¡Hola, bienvenidos! Soy Julio, y hoy vamos a hablar sobre un concepto fundamental en Python: cómo devolver variables dentro de una función. Esto es esencial para entender cómo las funciones pueden generar y enviar resultados útiles. Así que, ¡vamos a sumergirnos!
+
+En Python, para devolver variables dentro de una función, utilizamos la palabra clave `return`. Esta palabra clave nos permite enviar un valor específico de vuelta a donde se llamó la función.
+
+En este ejemplo simple, tenemos una función llamada "cuadrado" que toma el argumento "lado". Dentro de la función, calculamos el área y el perímetro, y luego utilizamos `return` para enviar ese resultado de vuelta.
+
+Vamos a ver cómo usar esta función en la práctica.
+
+Al llamar a la función `cuadrado` con el valor 5, obtenemos el resultado de 25 metros al cuadrado del área y 20 metros de perímetro. Ese resultado se almacena en `resultado_cuadrado` y luego lo imprimimos.
+
+En resumen, usar `return` dentro de una función nos permite enviar resultados específicos de vuelta a donde llamamos la función. Esto es crucial para obtener valores calculados o procesados dentro de nuestras aplicaciones.
+
+Y eso es todo por hoy, espero que hayas encontrado útil este tutorial sobre cómo devolver variables en funciones en Python. Si te gustó el video, no olvides darle like, suscribirte al canal y activar la campana para recibir notificaciones. ¡Nos vemos en el próximo video!
