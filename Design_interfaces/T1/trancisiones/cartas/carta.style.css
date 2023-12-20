@@ -1,0 +1,33 @@
+.container {
+    margin:0 auto;
+    height:80vh;
+    width: 80vh;
+   
+}
+.carta{
+    width: 300px;
+    height: 300px;
+    transition: transform;
+    transition-duration: 1s;
+    transform-style: preserve-3d; 
+
+}
+.card__face {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip {
+    transform: rotateY(180deg);
+  }
+.imgCartaFront{
+
+}
+.imgCartaBack{
+    transform: rotateY(180deg);
+}
+ 
+.carta img{
+width: 100%;
+height: auto;
+}

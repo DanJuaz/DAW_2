@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            background-color: aqua;
+            color:black;
+            
+        }
+        .container div{
+            background-color: brown;
+            margin: 5px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1: flex-grow; crecimiento
+        2: flex-shrink; estrechez
+        3: flex-basis; width autoacumulable
+    -->
+
+    <div class="container">
+        <div>1</div>
+        <div style="flex: 0 1;">2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

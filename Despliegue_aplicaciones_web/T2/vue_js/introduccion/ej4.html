@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio $</th>
+        </tr>
+        <tr v-for="i in servicios">
+            <td v-if="i.activo" style="background-color: blue; color:white;">{{ i.nombre }}</td>
+            <td v-if="i.activo" style="background-color: blue; color:white;">{{ i.precio }}</td>
+            <td v-if="i.activo == false">{{ i.nombre }}</td>
+            <td v-if="i.activo == false"    >{{ i.precio }}</td>
+
+        </tr>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data:{
+        servicios: [
+                {
+                        nombre: 'Desarrollo web',
+                        precio: 300,
+                        activo:true
+                },{
+                        nombre: 'Diseño base de datos',
+                        precio: 400,
+                        activo:false
+                },{
+                        nombre: 'Integración',
+                        precio: 250,
+                        activo:false
+                },{
+                        nombre: 'Formación',
+                        precio: 220,
+                        activo:true
+                }
+        ]
+    }
+});
+/*
+Ejercicio 4
+Partiendo de estos datos:   
+Muestra todos los servicios con su nombre y precio, y que los activos y no activos salgan de colores diferentes.
+Pista: <li v-for=”servicio in servicios”> para recorrer el array. Y, para acceder a cada elemento puedes utilizar {{ servicio.nombre }} por ejemplo.
+*/
+</script>
+</body>
+</html>

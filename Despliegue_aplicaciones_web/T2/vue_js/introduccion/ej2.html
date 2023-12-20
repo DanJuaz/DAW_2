@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if =" nota >=5 "> {{ nombre }} es mayor de edad</div>
+        <div v-else >{{ nombre }} es menor de edad</div>
+    </div>
+    
+</body>
+<script>
+/*
+Ejercicio 2
+Partiendo de estos datos:
+nombre: Sue
+edad: 18
+nota: 7
+Haz que salga un mensaje solo cuando la persona haya aprobado (nota mayor o igual a 5), diciendo si es o no mayor de edad (edad mayor o igual a 18). Por ejemplo, con estos datos, se mostraría un mensaje similar a este: Sue es mayor de edad.
+*/
+new Vue({
+    el: '#app',
+    data:{
+        nombre: 'Sue',
+        edad: 18,
+        nota: 7
+    }
+    });
+</script>
+</html>

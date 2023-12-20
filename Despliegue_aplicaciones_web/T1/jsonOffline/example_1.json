@@ -1,0 +1,59 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "salary": 80000
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "position": "Data Scientist",
+        "department": "Data Science",
+        "salary": 90000
+      },
+      {
+        "id": 3,
+        "name": "Alice Johnson",
+        "position": "UI/UX Designer",
+        "department": "Design",
+        "salary": 75000
+      }
+    ],
+    "projects": [
+      {
+        "projectId": "P001",
+        "projectName": "Web Application Development",
+        "startDate": "2023-01-15",
+        "endDate": "2023-06-30",
+        "team": ["John Doe", "Jane Smith"]
+      },
+      {
+        "projectId": "P002",
+        "projectName": "Data Analysis Platform",
+        "startDate": "2023-02-01",
+        "endDate": "2023-08-15",
+        "team": ["Jane Smith", "Alice Johnson"]
+      }
+    ],
+    "departments": [
+      {
+        "name": "Engineering",
+        "head": "John Doe",
+        "location": "Building A, Floor 2"
+      },
+      {
+        "name": "Data Science",
+        "head": "Jane Smith",
+        "location": "Building B, Floor 1"
+      },
+      {
+        "name": "Design",
+        "head": "Alice Johnson",
+        "location": "Building C, Floor 3"
+      }
+    ]
+  }
+  

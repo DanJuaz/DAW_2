@@ -1,0 +1,11 @@
+{% extends 'base.html ' %}
+{% block container %}
+
+<div>
+    <h1>Producto: {{ product.name }}</h1>
+    <h3>Categoria: {{ product.category.name }}</h3>
+    <h5>Precio(€): {{ product.price }}</h5>
+
+</div>
+<small>{{ product.id }}</small>
+{% endblock %}

@@ -1,0 +1,32 @@
+body{
+    background-color: aliceblue;
+}
+.layout{
+    border: 1px solid black;
+    width: 80%;
+    display: grid;
+    grid-template-areas: 
+    "head head head"
+    "main main lateral"
+    "main main lateral"
+    "foot foot foot";
+}
+.caja{
+    text-align: center;
+    line-height: 150px;
+    border: 2px solid black;
+    margin:15px;
+    background-color:cornflowerblue;
+}
+.c1{
+    grid-area: head;
+}
+.c2{
+    grid-area: main;
+}
+.c3{
+    grid-area: lateral;
+}
+.c4{
+    grid-area: foot;
+}

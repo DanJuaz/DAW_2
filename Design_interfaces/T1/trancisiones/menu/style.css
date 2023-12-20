@@ -1,0 +1,21 @@
+.menuContainer{
+    width:150px;
+}
+ul {
+   list-style-type: none;
+}
+li{
+transition-property: background-color;
+transition-duration: 1s;
+transition-timing-function: ease-out;
+background-color: blue;
+left: 5px;
+top: 5px;
+height: 26px;
+padding: 2px 4px;
+border: solid 1px black;
+text-align: center;
+}
+li:hover{
+    background-color: white;
+}

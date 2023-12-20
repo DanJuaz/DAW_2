@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time </title>
+</head>
+<body>
+    <div id="hms"></div>
+    <button class="start" onclick="timestart()">|></button>
+    <button class="stop" onclick="stop()">STOP</button>
+    <button class="reiniciar" onclick="stop()">X</button>
+<script>
+window.onload = init;
+function init(){
+    document.querySelector(".start").addEventListener("click",cronometrar);
+    document.querySelector(".stop").addEventListener("click",parar);
+    document.querySelector(".reiniciar").addEventListener("click",reiniciar);
+    h = 0;
+    m = 0;
+    s = 0;
+    ms = 0;
+    document.getElementById("hms").innerHTML="00h:00m:00s:00ms";
+}         
+function cronometrar(){
+    escribir();
+    // setInterval(funcion, intervalo);
+    /*
+    funcion: La función que se ejecutará en cada intervalo de tiempo.
+    intervalo: El tiempo en milisegundos entre cada ejecución de la función.
+    Lama e escribir cada 10 milisegundos
+    */
+
+    id = setInterval(escribir,10);
+    document.querySelector(".start").removeEventListener("click",cronometrar);
+}
+function escribir(){
+    var hAux, mAux, sAux, msAux;
+    //s++;
+    ms++;
+    if (ms>100){s++;ms=0;}
+    if (s>59){m++;s=0;}
+    if (m>59){h++;m=0;}
+    if (h>24){h=0;}
+
+    if (ms<10){msAux="0"+ms;}else{msAux=ms;}
+    if (s<10){sAux="0"+s;}else{sAux=s;}
+    if (m<10){mAux="0"+m;}else{mAux=m;}
+    if (h<10){hAux="0"+h;}else{hAux=h;}
+
+    document.getElementById("hms").innerHTML = hAux + "h:" + mAux + "m:" + sAux+ "s:" +msAux+ "ms"; 
+}
+function parar(){
+    clearInterval(id);
+    document.querySelector(".start").addEventListener("click",cronometrar);
+
+}
+function reiniciar(){
+    clearInterval(id);
+    document.getElementById("hms").innerHTML="00h:00m:00s:00ms";
+    h=0;m=0;s=0,ms=0;
+    document.querySelector(".start").addEventListener("click",cronometrar);
+}
+</script>
+</body>
+</html>

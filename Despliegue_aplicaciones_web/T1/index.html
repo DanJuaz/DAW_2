@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./EjercicioIniciales/Promts/promts.js"></script>
+
+</head>
+
+<body>
+    <label>Introduce un número entre 1 y 100:</label>
+    <input id="valor" type="number" min="1" max="100">
+    <button onclick="adivinarNumero()">Adivinar</button>
+    <p id="resultado"></p>
+    <p id="trys"></p>
+    <script>
+    //Juego de adivinar el número secreto. El programa calcula un número secreto entre 1 y 100 y la persona tendrá que adivinarlo. Por cada intento el programa dirá si se ha pasado o se ha quedado corto y contará la cantidad de intentos hasta adivinarlo. Se puede hacer de varias formas, entre otras (elegir una):
+    //A través del comando “prompt” para pedir valores.
+    //A través de un formulario. Por ejemplo:
+    //<label>Introduce valor:</label>
+    //<input id=”valor” type=”number” min=”1” max=”100”>
+    //<button onclick=”adivinarNumero”>Adivinar</button>
+    //<p id=”resultado”></p>
+    //Para acceder al valor introducido:
+    //valor = document.getElementById(“valor”);
+    //Para mostrar en pantalla (párrafo con id “resultado”):
+    //document.getElementById(“resultado”).innerHTML=”texto a mostrar”;
+    let trys = 0;
+    let numeroRandom = Math.floor(Math.random()*100) + 1;
+    
+
+    function adivinarNumero(){
+        trys ++;
+        const valor = parseInt(document.getElementById("valor").value, 10);
+        const resultadoElement = document.getElementById("resultado");
+        const trysElement = document.getElementById("trys");
+
+        if(isNaN(valor) || valor < 1 || valor > 100){
+            resultadoElement.innerHTML="Introduce un numero entre 1 y 100";
+        }else if(valor < numeroRandom){
+            resultadoElement.innerHTML="El numero secreto es mayor";
+        }else if(valor > numeroRandom){
+            resultadoElement.innerHTML="El numero secreto es menor";
+        }else{
+            resultadoElement.innerHTML="Felicidades has acertado";
+            trysElement.innerHTML="Has tartado :"+trys;
+            reiniciar();
+        }
+    }
+    function reiniciar(){
+        numeroRandom = Math.floor(Math.random()*100) + 1;
+        trys = 0;
+    }
+
+    </script>
+</body>
+
+</html>

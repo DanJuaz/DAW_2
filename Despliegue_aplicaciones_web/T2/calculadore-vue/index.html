@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue Calculator</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    
+        <style>
+            body{
+                margin: 0   ;
+                padding: 0;
+                background-color: rgb(25, 255, blue);
+                display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh;
+                
+            }
+    #calculator {
+        background-color: rgb(0,255 ,0, 0.6);
+      max-width: 300px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display:flex;
+        flex-direction: column;
+    }
+    .input {
+        width: 100%;
+      margin-bottom: 10px;
+    }
+    input{
+        background-color: rgb(0, 0, 10, 0.6);
+      color: #ffff;
+        border: 1px solid rgb(0, 0, 10, 0.6);
+        border-radius: 5px;
+        width: 100%;
+        text-align: right;
+        font-size: 24px;
+    }
+    .buttoms-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .buttom{
+        flex: 1 0 65px;
+    }
+    button {
+        background-color: rgb(0, 0, 10, 0.6);
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      font-size: 16px;
+      color: #ffff;
+        border: 1px solid rgb(0, 0, 10, 0.6);
+        border-radius: 5px;
+    }
+    .operator{
+        background-color: rgb(0, 0, 50, 0.8);
+    }
+    .equal{
+        background-color: rgb(0,0,255, 0.6);
+    }
+  </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <div class="input">
+                <input type="text" v-model="display" readonly>
+            </div>
+
+            <div class="buttoms-container">
+               <div v-for="i in buttons" class="buttom">
+                    <button :key="i.id" @click="hacerClick(i.value)" :class="i.class">
+                        {{ i.label }}
+                    </button>
+               </div>     
+            </div>
+        </div>
+
+        <script>
+  new Vue({
+    el: '#calculator',
+    data: {
+      display: '0',
+      buttons: [
+      { id: 16, label: '+', value: '+' , class: 'operator'},
+      { id: 12, label: '-', value: '-', class: 'operator'},
+        { id: 17, label: 'AC', value: 'delete', class: 'operator' },
+        { id: 18, label: '←', value: 'wipe', class: 'operator' },
+        
+
+        { id: 1, label: '7', value: '7' },
+        { id: 2, label: '8', value: '8' },
+        { id: 3, label: '9', value: '9' },
+        { id: 8, label: '×', value: '*', class: 'operator' },
+        
+        { id: 5, label: '4', value: '4' },
+        { id: 6, label: '5', value: '5' },
+        { id: 7, label: '6', value: '6' },
+        { id: 4, label: '÷', value: '/', class: 'operator' },
+        
+        { id: 9, label: '1', value: '1' },
+        { id: 10, label: '2', value: '2' },
+        { id: 11, label: '3', value: '3' },
+        // Elevar un valor a otro
+        { id:19, label:'x^', value:'**', class: 'operator'},
+
+        
+       
+        { id: 14, label: '.', value: '.', class: 'operator' },
+        { id: 13, label: '0', value: '0' },
+        //Calcular el residuo
+        { id: 20, label: '%', value: '%' , class: 'operator'},
+        
+        { id: 15, label: '=', value: 'equals' , class: 'equal'},
+        
+      ],
+    },
+    methods: {
+  hacerClick(value) {
+    if (value === 'delete') {
+      this.display = '0';
+    } else if (value === 'wipe') {
+      this.display = this.display.slice(0, -1);
+    } else if (value === 'equals') {
+      try {
+        this.display = eval(this.display).toString();
+      } catch {
+        this.display = 'Error';
+      }
+    } else {
+      if (this.display === '0' || this.display === 'Error') {
+        this.display = value;
+      } else {
+        this.display += value;
+      }
+    }
+  },
+
+},
+
+    });
+
+
+</script>
+
+    </body>
+</html>

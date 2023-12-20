@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block container %}
+<div>
+    <form method="POST" action="{{ url_for('catalog.category_create')}}", role="form">
+        <div>{{ form.name.label}}: {{ form.name() }}</div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+{% endblock %}

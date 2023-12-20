@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<main>
+
+  <h2>Employee Information</h2>
+
+  <h3>Employees</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Department</th>
+      <th>Salary</th>
+    </tr>
+    <tbody id="employeeTableBody"></tbody>
+  </table>
+
+  <h3>Projects</h3>
+  <table>
+    <tr>
+      <th>Project ID</th>
+      <th>Project Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Team</th>
+    </tr>
+    <tbody id="projectTableBody"></tbody>
+  </table>
+
+  <h3>Departments</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Head</th>
+      <th>Location</th>
+    </tr>
+    <tbody id="departmentTableBody"></tbody>
+  </table>
+</main>
+<body>
+<script>
+fetch('./example_1.json')
+  .then(response => response.json())
+  .then(jsonData => {
+    function displayEmployees() {
+      const employeeTableBody = document.getElementById("employeeTableBody");
+      jsonData.employees.forEach(employee => {
+        const row = `<tr>
+          <td>${employee.id}</td>
+          <td>${employee.name}</td>
+          <td>${employee.position}</td>
+          <td>${employee.department}</td>
+          <td>${employee.salary}</td>
+        </tr>`;
+        employeeTableBody.innerHTML += row;
+      });
+    }
+
+    // Function to display project data
+    function displayProjects() {
+      const projectTableBody = document.getElementById("projectTableBody");
+      jsonData.projects.forEach(project => {
+        const row = `<tr>
+          <td>${project.projectId}</td>
+          <td>${project.projectName}</td>
+          <td>${project.startDate}</td>
+          <td>${project.endDate}</td>
+          <td>${project.team.join(', ')}</td>
+        </tr>`;
+        projectTableBody.innerHTML += row;
+      });
+    }
+
+    // Function to display department data
+    function displayDepartments() {
+      const departmentTableBody = document.getElementById("departmentTableBody");
+      jsonData.departments.forEach(department => {
+        const row = `<tr>
+          <td>${department.name}</td>
+          <td>${department.head}</td>
+          <td>${department.location}</td>
+        </tr>`;
+        departmentTableBody.innerHTML += row;
+      });
+    }
+
+    // Call functions to display data
+    displayEmployees();
+    displayProjects();
+    displayDepartments();
+  }).catch(error => console.log(error)); 
+// Function to display employee data
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+*{
+    margin: 10px;
+}
+.padre{
+    padding: 0;
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+/*  HEADER  */
+header {
+    display: flex;
+    flex-direction: column;
+    
+    background-image: url("./back.jpg");
+    background-size: cover;
+    text-align: center; 
+    padding: 10px; 
+    color: white;
+    height: 90vh;
+}
+  
+header h1 {
+    font-size: 25px;
+}
+  
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+  
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+  
+.logo {
+   flex:1 1 1;
+   margin-right: 250px;
+}
+  
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.nav a {
+    color: white;
+    margin-right: 30px; 
+}
+  
+.social {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+.social a {
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+}
+  
+.texto-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+/*  MAIN */
+main{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.columna-izquierda{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.columna-izquierda article {
+    flex: 1 48%; 
+    box-sizing: border-box; 
+}
+
+.columna-centro{
+    display: flex;
+    flex-direction: column;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+}   
+
+article img {
+   width: 100%;
+   
+}
+
+article h2 {
+    font-size: 20px;
+    margin-top: -60px;
+    padding: 10px;
+    color: black;
+    color: white;
+}
+/*  FOOTER */
+footer{
+    background-color: black;
+    padding: 10px;
+}
+.columna-footer{
+    display: flex;
+    color: white;
+    justify-content: center;
+}

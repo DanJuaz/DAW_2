@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Pronostico</title>
+    <link rel="stylesheet" href="./assests/style.css">
+</head>
+<body>
+    <main>
+        <h1>API de Tiempo</h1>
+        <div class="actual">
+            <div class="form">
+                
+                <label for="latitud">Latitud:</label>
+                <!-- ========== Time Zone Madrid ========== -->
+                <input type="text" id="latitud" max="90" value="43,3128">
+                <label for="longitud">Longitud:</label>
+                <input type="text" id="longitud" max="180" value="-1,975">
+                <button onclick="fetchDatosJSON()">Mostrar</button>
+            </div>
+
+            <div class="tiempoHoy">
+                <h2>Datos actuales:</h2>
+                <img src="" alt="Icono del tiempo" id="iconoTiempo">
+                <p><span id="temperatura"></span>°C</p>
+                
+            </div>
+            <div class="tempMaxMin">   
+                <h2>Temperatura máxima y mínima de hoy:</h2>
+                <p>Máxima: <span id="tempMax"></span>°C</p>
+                <p>Mínima: <span id="tempMin"></span>°C</p>
+            </div>
+        </div>
+        <div class="pronostico">
+            <table>
+                <caption>Pronostico a 7 días</caption>
+                <thead>
+                    <td>Día</td>
+                    <td>Hora</td>
+                    <td>Tiempo</td>
+                    <td>Temperatura</td>
+                </thead>
+                <tbody class="card" id="pronostico">
+                    <!-- Imagen + h2 + h3-->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

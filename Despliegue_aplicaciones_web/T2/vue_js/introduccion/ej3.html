@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <div>Cantidad de elementos {{ datos.length  }}</div>
+    <div>Ultimo elemento {{ datos[datos.length-1] }}</div>
+    <ol>
+        <li v-for="(dato, index) in datos" :key="index">{{ dato }}</li>
+    </ol>
+</div>
+<script>
+/*
+Ejercicio 3
+Partiendo de estos datos:
+datos: [10,44,5,87,-3,25,31]
+Muestra la cantidad de elementos que hay.
+Muestra el último elemento.
+Muestra en una lista numerada (ol) todos los elementos de la tabla de datos.
+*/
+new Vue({
+    el: '#app',
+
+    data:{
+        datos : [10,44,5,87,-3,25,31]
+    }
+});
+</script>
+</body>
+</html>

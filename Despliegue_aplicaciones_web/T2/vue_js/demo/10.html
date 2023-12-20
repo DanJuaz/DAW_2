@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    
+    <script>
+
+     var app = new Vue({
+        el: '#app',
+        data:{
+            articulos:[],
+            paginaActual:1,
+            articulosPorPagina:10,
+        },
+        methods:{
+        }
+    })
+    app.component('componente-hijo', {
+        template: `
+            <div>
+                <h2>Componente hijo</h2>
+                <p>Este es el componente hijo</p>
+            </div>
+        `
+    })
+
+    </script>
+</body>
+
+</html>

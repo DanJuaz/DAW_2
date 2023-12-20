@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Beyond Pixels</title>
+        <meta name="description" content>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <header>
+            
+            <div class="header-nav" id="navbar">
+                <div class="mobile" id="mobile" onclick="mobile_menu()">
+                    <span id="menu-icon">&#9776;</span>
+                </div>
+                <div class="logo">
+                    <div class="image">
+                        <img src="./img/logo.webp" alt="logo" loading="eager"> 
+                    </div>
+                    <div class="title">
+                        <h1>BeyondPixels</h1>
+                    </div>
+                </div>
+                <div class="nav" id="mobile-menu">
+                    <div><a href>Home</a></div>
+                    <div><a href>Trending</a></div>
+                    <div><a href>About</a></div>
+                </div>
+            </div>
+        </header>
+        <main id="main-content">
+            <section class="card"><div class="card-image">
+                <video
+                    id="my-video"
+                    class="video-js"
+                    controls
+                    preload="auto"
+                    width="640"
+                    height="400"
+                    poster="./img/logo.webp"
+                    data-setup="{}"
+                    controlslist="nodownload"
+                >
+                <source src="./img/julio.mp4" type="video/mp4" />
+                <source src="MY_VIDEO.webm" type="video/webm" />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a
+                  web browser that
+                  <a href="https://videojs.com/html5-video-support/" target="_blank"
+                    >supports HTML5 video</a
+                  >
+                </p>
+              </video>
+                    <h2>Julio</h2>
+                </div>
+            </section>
+            
+            <section class="card"><div class="card-image">
+                <video
+                    id="my-video"
+                    class="video-js"
+                    controls
+                    preload="auto"
+                    width="640"
+                    height="400"
+                    poster="./img/logo.webp"
+                    data-setup="{}"
+                    controlslist="nodownload"
+                >
+                <source src="./img/video.mp4" type="video/mp4" />
+                <source src="MY_VIDEO.webm" type="video/webm" />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a
+                  web browser that
+                  <a href="https://videojs.com/html5-video-support/" target="_blank"
+                    >supports HTML5 video</a
+                  >
+                </p>
+              </video>
+                    <h2>Issam</h2>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="license">
+                <div>About</div>
+                <div>Q&A</div>
+                <div>License</div>
+                <div>Privacy</div>
+                <div>Legal Notice</div>
+            </div>
+            <div class="footer-container">
+
+                <div class="copyright">
+                    &copy; 2021 Beyond Pixels
+                </div>
+                <div class="social-media">
+                    Get Updates
+                    <img src="./img/social-media/facebook.png" alt="Facebok" loading="lazy">
+                    <img src="./img/social-media/twitter.png" alt="Facebok" loading="lazy">
+                    <img src="./img/social-media/instagram.png" alt="Facebok" loading="lazy">
+                </div>
+            </div>
+
+
+        </footer>
+        <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+        <script src="./static/js/script.js" async defer></script>
+    </body>
+</html>

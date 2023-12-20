@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    {{ message  }}
+    <p v-if="message.length % 2 === 0"> Longitud par</p>
+    <p v-else>Longitud Impar</p>
+</div>
+<script>
+    const { createApp } = Vue;
+    createApp({
+        data(){
+            return{
+            message:'Hello Vue!'
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>

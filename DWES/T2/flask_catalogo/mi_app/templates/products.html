@@ -1,0 +1,34 @@
+{% extends 'home.html ' %}
+{% block container %}
+ <h1>Product List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.category.name }}</td>
+                    <td><a href="{{ url_for('catalog.product', id=p.id )}}">Aquí</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<a href="{{ url_for('catalog.products', page=current_page - 1) }}" >
+    <button type="submit" {% if current_page == 1 %}disabled{% endif %}>&lt;</button>
+</a>
+
+<button disabled>{{ current_page }}</button>
+
+<a href="{{ url_for('catalog.products', page=current_page + 1) }}" >
+    <button type="submit" {% if current_page == total_pages %}disabled{% endif %}>&gt;</button>
+</a>
+{% endblock %}

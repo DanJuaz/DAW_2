@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucles</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="(persona, index) in listaPersonas" :key="index">{{ persona.nombre }} {{ persona.edad }}</li>
+  </ul>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+        listaPersonas:[
+            {id:1, nombre:'Juan', apellidos:'García', edad:30},
+            {id:2, nombre:'Ana', apellidos:'García', edad:30},
+            {id:3, nombre:'Pedro', apellidos:'García', edad:30},
+            {id:4, nombre:'Luis', apellidos:'García', edad:30},
+            {id:5, nombre:'María', apellidos:'García', edad:30},
+            {id:6, nombre:'José', apellidos:'García', edad:30},
+            {id:7, nombre:'Antonio', apellidos:'García', edad:30},
+            {id:8, nombre:'Rosa', apellidos:'García', edad:30},
+        ]
+    },
+  });
+</script>
+
+</body>
+</html>

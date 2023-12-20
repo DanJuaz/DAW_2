@@ -1,0 +1,7 @@
+{% extends 'home.html ' %}
+{% block container %}
+        {% for category in categories %}
+            <p>Category Name: {{ category.name }}</p>
+            <a href="{{ url_for('catalog.category', id=category.id) }}">View Category</a>
+        {% endfor %}
+{% endblock %}

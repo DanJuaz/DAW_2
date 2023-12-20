@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucles</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>Contador {{ contador }}</p>
+    <p>Message is: {{ number }}</p>
+    <input v-model="number" type="number" />
+    <button @click="incrementar()">Incrementar</button>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+        contador:0,
+        number: 2
+        
+    },
+    methods:{
+        incrementar(){
+            this.contador += parseInt(this.number);
+        }
+    },
+  });
+</script>
+
+</body>
+</html>

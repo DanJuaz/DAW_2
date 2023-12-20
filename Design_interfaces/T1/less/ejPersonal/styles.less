@@ -1,0 +1,54 @@
+// Variables
+@color-primary: #3498db;
+@color-background: #f2f2f2;
+@font-size-large: 18px;
+@margin-horizontal: 20px;
+
+// Estilos para el encabezado
+#profile-header {
+    background-color: @color-primary;
+    color: #fff;
+    text-align: center;
+    
+    h1 {
+        font-size: @font-size-large;
+    }
+}
+
+// Estilos para la sección de información personal
+#personal-info {
+    background-color: @color-background;
+    padding: 10px;
+    
+    h2 {
+        font-weight: bold;
+    }
+    
+    .info-label {
+        font-weight: bold;
+    }
+    
+    .info-value {
+        margin-left: 5px;
+    }
+}
+
+// Mixin para estilos de botones
+.button-styles(@bg-color, @text-color) {
+    background-color: @bg-color;
+    color: @text-color;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+// Estilos para los botones de acción
+.action-button {
+    .button-styles(@color-primary, #fff);
+}
+
+.action-button:hover {
+    background-color: darken(@color-primary, 10%);
+}
+

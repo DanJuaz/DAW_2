@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    padding: 10px;
+    margin:10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+
+}
+/* Estilo para la cabecera */
+header {
+    
+    background-color:black;
+
+}
+.menu{
+    display: grid;
+    background-color: chocolate;
+}
+.logo{
+    grid-column: 1/3;
+    background-color: #50048f;
+    
+}
+.nav {
+    grid-column: 3/10;
+    background-color: #50048f;
+    
+}
+.social {
+    grid-column: 10/12;
+    background-color: #50048f;
+    
+}
+.texto-principal{
+    background-color: chartreuse;
+}
+h1{
+    justify-content: center;
+    background-color: green;
+}
+
+/* Estilo para el contenido principal */
+main {
+    display: grid;
+    background-color: black;
+}
+
+.columna-izquierda{
+    grid-column: 1/8;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #964d1c;
+    
+}
+
+.columna-centro {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-column: 8/12;
+    background-color: #18048a;
+}
+
+article {
+    background: red;
+}
+
+/* Estilo para el pie de página */
+footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: black;
+}
+
+.columna-footer{
+   background-color: #18048a;
+}
+
