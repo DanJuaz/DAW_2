@@ -1,37 +1,18 @@
 
 - [Isvid](#isvid)
-  - [Optimización](#optimización)
-  - [Unir video texto](#unir-video-texto)
   - [Evaluación de rendimiento](#evaluación-de-rendimiento)
 
 # Isvid
 <p>Isvid contiene desde cortometrajes vanguardistas hasta contenido de creadores emergentes, Isvid te ofrece una experiencia envolvente y única. Descubre, comparte y déjate inspirar con la plataforma que celebra la creatividad en movimiento. ¡Bienvenido a IsVid!</p>
 
-## Optimización
-Optimización de Carga de Vídeos: 
-1. Compresión de Vídeo: 
-o Utilizar códecs eficientes y ajustar la configuración de compresión para  reducir el tamaño del archivo de vídeo. 
-2. Streaming de Vídeo: 
-o Implementar técnicas de streaming para permitir la reproducción  progresiva, comenzando la reproducción antes de que se descargue  todo el vídeo. 
-3. Resolución y Tasa de Fotogramas: 
-o Ajustar la resolución y la tasa de fotogramas según las necesidades,  equilibrando la calidad visual con el tamaño del archivo. 
-4. Formato de Vídeo: 
-o Utilizar formatos de vídeo eficientes, como MP4 con códecs de última  generación, para mejorar la compatibilidad y la eficiencia de carga. 
-5. Lazy Loading de Vídeo: 
-o Implementar la carga diferida para postergar la carga de vídeos no  esenciales hasta que el usuario los solicite.
-6. Uso de CDN: 
-o Almacenar vídeos en servidores de una red de entrega de contenidos  (CDN) para mejorar la velocidad de carga y reducir la carga en el  servidor principal. 
-Optimización de Carga de Audios: 
-1. Compresión de Audio: 
-o Utilizar formatos de audio eficientes, como MP3 o AAC, y ajustar la  calidad de compresión para reducir el tamaño del archivo. 
-2. Streaming de Audio: 
-o Implementar la reproducción progresiva de audio para comenzar a  reproducir antes de que se haya descargado todo el archivo. 
-3. Formato de Audio: 
-o Seleccionar el formato de audio más adecuado para cada caso,  considerando la calidad y el tamaño del archivo. 
-4. Lazy Loading de Audio: 
-o Retrasar la carga de archivos de audio no esenciales hasta que sea  necesario para mejorar los tiempos de carga inicial. 
-5. Reducción de Bitrate: 
-o Ajustar el bitrate del audio para equilibrar la calidad del sonido con el  tamaño del archivo.
-## Unir video texto
-
 ## Evaluación de rendimiento
+<p>Después de realizar una exhaustiva evaluación de rendimiento y aplicar diversas metodologías de optimización, hemos logrado mejorar significativamente la eficiencia de Isvid. A continuación, se presenta una comparación entre la versión sin optimizar y la versión optimizada en términos de carga de imágenes en diferentes dispositivos.</p>
+
+| Tipo           | Sin optimizar | Optimizado |
+| -------------- | -------------- | -----------|
+| Desktop        | ![Sin optimizar Desktop](./img/sin-optimizar%20desktop.png) | ![Optimizado Desktop](./img/optimizado%20desktop.png) |
+| Mobile         | ![Sin optimizar Mobile](./img/sin-optimizar%20mobile.png)   | ![Optimizado Mobile](./img/optimizado%20mobile.png)  |
+
+<p>Como se puede observar, trás comprimir los videos y aplicar las metodologías de optimización, hemos logrado una mejora sustancial en la carga de la página, brindando así a nuestros usuarios una experiencia más rápida y eficiente. ¡Gracias por ser parte de IsVid!</p>
+
+

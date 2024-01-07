@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:01.600 --> 00:00:07.800
+Hello, I'm Juan Ezkibel, and this time I'm going to show you an interesting feature of Python that not everyone knows or uses.
+
+00:00:08.000 --> 00:00:13.690
+Python, unlike other programming languages, can return multiple values in a function, not just one,
+
+00:00:13.700 --> 00:00:20.490
+without the need to use lists, collections, objects, etc.
+
+00:00:21.000 --> 00:00:27.990
+Let's start by defining a function called "square" that will receive the side as a parameter.
+
+00:00:28.000 --> 00:00:36.490
+Then, I will declare internally a function called "area" that will be equal to the side multiplied by itself, or side squared.
+
+00:00:36.700 --> 00:00:42.290
+I will declare another one called "perimeter" that will be equal to four times that side, i.e., 4 multiplied by the side.
+
+00:00:42.300 --> 00:00:46.590
+Here comes the interesting part. When I use the "return" statement, I will tell it to return the area,
+
+00:00:46.600 --> 00:00:53.090
+but it will also return the perimeter. That's it. This function is returning these two values.
+
+00:00:53.600 --> 00:01:00.490
+Now, when I call this function, I have to assign it the same number of variables as the values it returns.
+
+00:01:00.700 --> 00:01:05.290
+In this case, it returns two values, so I have to use two variables when calling it.
+
+00:01:05.300 --> 00:01:10.490
+One variable named "a" for the area, and another variable named "p" for the perimeter.
+
+00:01:10.600 --> 00:01:14.090
+I will assign these variables the result of calling the "square" function with "3" as a parameter.
+
+00:01:14.600 --> 00:01:22.090
+If we execute this now, we can see that we get "9," which is the area (3 * 3), and 12, which is the perimeter (4 * 3).
+
+00:01:22.200 --> 00:01:26.590
+And we can see how it assigns them. Also, as is obvious, it's worth mentioning.
+
+00:01:26.700 --> 00:01:33.290
+The first variable it returns is "area," which is assigned to the first variable we use in the assignment, and the same with the second, third, fourth.
+
+00:01:33.300 --> 00:01:36.790
+And so on, as needed. That's all for now, and see you in the next video.

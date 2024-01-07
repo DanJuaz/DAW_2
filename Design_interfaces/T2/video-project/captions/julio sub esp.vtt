@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:01.600--> 00:00:07.800
+Hola, yo soy Juan Ezkibel, y en esta ocasión les voy a enseñar una curiosidad de Python que no todos saben o no todos utilizan.
+
+00:00:08.000 --> 00:00:13.690
+Es que Python, a diferencia de otros lenguajes de programación, en una función puede devolver varios valores, no solo uno,
+
+00:00:13.700 --> 00:00:20.490
+sin necesidad de utilizar listas, colecciones, objetos, etc.
+
+00:00:21.000 --> 00:00:27.990
+Vamos a empezar definiendo una función que se va a llamar cuadrado y que va a recibir como parámetro el lado.
+
+00:00:28.000 --> 00:00:36.490
+Entonces, voy a declarar internamente una función que se llama área que va a ser igual al lado multiplicado por ese mismo lado, o lado al cuadrado.
+
+00:00:36.700 --> 00:00:42.290
+Voy a declarar otra que se va a llamar perímetro que va a ser igual a cuatro veces ese lado, es decir, 4 multiplicado por el lado.
+
+00:00:42.300 --> 00:00:46.590
+Ahí viene lo interesante cuando yo agarro el "return" voy a decirle que va a retornar el área,
+
+00:00:46.600 --> 00:00:53.090
+pero también va a retornar el perímetro y listo. Esta función está devolviendo esos dos valores.
+
+00:00:53.600 --> 00:01:00.490
+Ahora bien, cuando yo vaya a llamar esa función, tengo que asignarle el mismo número de variables que valores que devuelva esa función.
+
+00:01:00.700 --> 00:01:05.290
+En este caso, devuelve dos valores, así que tengo que usar dos variables cuando la vaya a llamar.
+
+00:01:05.300 --> 00:01:10.490
+Una variable que se va a llamar "a" para el área, y una variable que se va a llamar "p" para el perímetro.
+
+00:01:10.600 --> 00:01:14.090
+A esas variables, les voy a asignar el resultado de mandar llamar a la función "cuadrado" mandando como parámetro el "3".
+
+00:01:14.600 --> 00:01:22.090
+Si ahora ejecutamos esto, podemos ver que obtenemos el "9", que es el área (3 * 3), y 12, que es el perímetro (4 * 3).
+
+00:01:22.200 --> 00:01:26.590
+Y podemos ver cómo lo asigna. Y también, como es obvio, no está de más recalcarlo.
+
+00:01:26.700 --> 00:01:33.290
+La primera variable que devuelve es "área", que se le asigna a la primera variable que utilizamos en la asignación, y lo mismo con la segunda, tercera, cuarta.
+
+00:01:33.300 --> 00:01:36.790
+Y así la que necesitemos. Eso es todo por ahora y nos vemos en el próximo video.

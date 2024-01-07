@@ -3,22 +3,24 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Beyond Pixels</title>
+        <title>Beyond Pixels Optimizado</title>
         <meta name="description" content>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./static/css/style.css">
-
+        <link href="https://vjs.zencdn.net/8.6.1/video-js.css"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <header>
-            
+
             <div class="header-nav" id="navbar">
                 <div class="mobile" id="mobile" onclick="mobile_menu()">
                     <span id="menu-icon">&#9776;</span>
                 </div>
                 <div class="logo">
                     <div class="image">
-                        <img src="./img/imagees_comparaciodeden.png" alt="logo" loading="eager"> 
+                        <img src="./img/logo.webp" alt="logo" loading="eager">
                     </div>
                     <div class="title">
                         <h1>BeyondPixels</h1>
@@ -26,30 +28,77 @@
                 </div>
                 <div class="nav" id="mobile-menu">
                     <div><a href>Home</a></div>
-                    <div><a href>Stabble Diffusion</a></div>
-                    <div><a href>BNG</a></div>
-                    <div><a href>Ideogram AI</a></div>
+                    <div><a href>Trending</a></div>
+                    <div><a href>About</a></div>
                 </div>
-            </div>
-            <div class="description">
-                <h1>Creating safe Art that benefits all of humanity</h1>
-                <button>Learn about Beyond Pixels</button>
             </div>
         </header>
         <main id="main-content">
             <section class="card"><div class="card-image">
-                <video width="320" height="240" preload="auto" loop controls autoplay>
-                    <source src="./img/video.mp4" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                    <h2>Card 1</h2>
+                    <video
+                        class="video-js"
+                        class="video-caption"
+                        controls
+                        preload="auto"
+                        width="640"
+                        height="400"
+                        poster="./img/logo.webp"
+                        data-setup="{}"
+                        controlslist="nodownload">
+                        <source
+                            src="./video/julio compressed.mp4"
+                            type="video/mp4" 
+                        />
+                        <track
+                            kind="captions" 
+                            src="./captions/julio sub esp.vtt"
+                            srclang="es"
+                            label="Spanish"
+                            default
+                        >
+                        <track
+                        kind="captions" 
+                        src="./captions/julio sub en.vtt"
+                        srclang="en"
+                        label="English"
+                        default
+                    >
+                    </video>
+                    <h2>Julio</h2>
                 </div>
             </section>
+
             <section class="card"><div class="card-image">
-                <img src="./img/images_optimizadas/1.png" alt="Card Image" loading="eager"></div>
-                <div class="card-title">
-                    <h2>Card 1</h2>
+                    <video
+                        class="video-js"
+                        class="video-caption"
+                        controls
+                        preload="auto"
+                        width="640"
+                        height="400"
+                        poster="./img/logo.webp"
+                        data-setup="{}"
+                        controlslist="nodownload">
+                        <source
+                            src="./video/video issam with sound compressed.mp4"
+                            type="video/mp4" 
+                        />
+                        <track
+                            kind="captions" 
+                            src="./captions/tuto html sub eng.vtt"
+                            srclang="en"
+                            label="English"
+                            default
+                        >
+                        <track
+                            kind="captions" 
+                            src="./captions/tuto html sub esp.vtt"
+                            srclang="es"
+                            label="Spanish"
+                            default
+                        >
+                    </video>
+                    <h2>Issam</h2>
                 </div>
             </section>
         </main>
@@ -64,25 +113,14 @@
             <div class="footer-container">
 
                 <div class="copyright">
-                    &copy; 2023 Julio Daniel. All rights reserved.
+                    &copy; 2021 Beyond Pixels
                 </div>
                 <div class="social-media">
                     Get Updates
-                    <img src="./img/social-media/facebook.png" alt="Facebok" loading="lazy">
-                    <img src="./img/social-media/twitter.png" alt="Facebok" loading="lazy">
-                    <img src="./img/social-media/instagram.png" alt="Facebok" loading="lazy">
                 </div>
             </div>
 
-
         </footer>
-
-        <script src="./static/js/script.js" async defer></script>
+        <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
     </body>
 </html>
-<!-- ========== Start Section ==========        
-Fijar nav cunado srcoll down *
-Card responsive *
-tablet nav ocup mitad 
-better titles 
-icons rrss -->
