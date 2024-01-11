@@ -1,90 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
 
-<div id="app" class="container mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row md:justify-between md:items-center">
-        <h1 class="text-2xl font-bold my-4">Shopping Cart</h1>
+        <div id="app" class="container mx-auto px-4 py-8">
+            <div
+                class="flex flex-col md:flex-row md:justify-between md:items-center">
+                <h1 class="text-2xl font-bold my-4">Shopping Cart</h1>
 
-        <div class="relative flex justify-end items-center mt-8 fixed top-0 right-0">
-            <button @click="openDialog()" class="group bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded relative">
-                <span class="absolute top-0 right-0 bg-red-500 text-white font-bold rounded-full h-6 w-6 flex items-center justify-center">
-                    {{carrito.length}}
-                </span>
-                <svg class="h-8 w-8 text-white group-hover:text-indigo-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            </button>
+                <div
+                    class="relative flex justify-end items-center mt-8 fixed top-0 right-0">
+                    <button @click="openDialog()"
+                        class="group bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded relative">
+                        <span
+                            class="absolute top-0 right-0 bg-red-500 text-white font-bold rounded-full h-6 w-6 flex items-center justify-center">{{carrito.length}}</span>
+                        <svg
+                            class="h-8 w-8 text-white group-hover:text-indigo-700"
+                            fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </button>
 
-            <dialog :open="dialogOpen" style="position: absolute;top: 50px;left: -160px;width: 230px;"
-                class="bg-white border shadow">
-                <!-- Contenido del modal -->
-                <div>
-                    <h2 class="text-2xl font-bold mb-4">Carrito</h2>
-                    <div v-if="carrito.length > 0" class="flex flex-col w-full">
-                        <div v-for="id in carrito" :key="id" class="bg-white p-4 shadow-md rounded-md mb-4">
-                            <h2 class="text-lg font-semibold text-indigo-700">{{ articulos.find(articulo => articulo.id === id).title }}</h2>
-                            <p class="text-gray-600">{{ id }}</p>
-                            <p>Cantidad: </p>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-gray-700 font-bold">{{articulos.find(articulo => articulo.id === id).price}} €</span>
-                                <button @click="" class="text-red-500 hover:text-red-700">
-                                    Eliminar
-                                </button>
+                    <dialog :open="dialogOpen"
+                        style="position: absolute;top: 50px;left: -160px;width: 230px;"
+                        class="bg-white border shadow">
+                        <!-- Contenido del modal -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Carrito</h2>
+                            <div v-if="carrito.length > 0"
+                                class="flex flex-col w-full">
+                                <div v-for="(articulo, index) in carrito"
+                                    :key="index"
+                                    class="bg-white p-4 shadow-md rounded-md mb-4">
+                                    <h2
+                                        class="text-lg font-semibold text-indigo-700">{{
+                                        articulo.title }}</h2>
+                                    <p class="text-2xl">{{ articulo.img }}</p>
+                                    <p>Cantidad: {{ articulo.cantidad }}</p>
+                                    <div
+                                        class="flex justify-between items-center mt-4">
+                                        <span class="text-gray-700 font-bold">{{
+                                            articulo.price }}€</span>
+
+                                        <button
+                                            @click="eliminarArticuloDelCarrito(articulo.id)"
+                                            class="text-red-500 hover:text-red-700">Eliminar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <label for="moneda">Sub total: <strong>{{ calcularSubtotal()
+                        }}</strong></label>
+                        <select v-model="selectedCurrency"
+                            @change="calcularSubtotal()" id="moneda">
+                            <option v-for="(rate, currency) in tasasDeCambio"
+                                :value="currency" :key="currency">
+                                {{ currency }}
+                            </option>
+                        </select>
+                        <button @click="closeDialog()"
+                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-4">Cerrar</button>
+                    </dialog>
                 </div>
-                <p>Sub total: <strong>{{ calcularSubtotal() }}</strong></p>
-                <button @click="closeDialog()" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-4">
-                    Cerrar
-                </button>
-            </dialog>
+            </div>
+
+            <div class="mt-8">
+                <product v-for="articulo in paginarArticulos()"
+                    :key="articulo.id" :articulo="articulo"
+                    @agregar_articulo_al_carrito="agregarArticuloAlCarrito"></product>
+            </div>
+
+            <button @click="paginaAnterior()" :disabled="paginaActual === 1"
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Anterior</button>
+            <span>{{ paginaActual }}</span>
+            <button @click="paginaSiguiente()"
+                :disabled="paginaActual >= paginaSiguiente"
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Siguiente</button>
         </div>
-    </div>
 
-    <div class="mt-8">
-        <product
-        
-            v-for="articulo in paginarArticulos()"
-            :key="articulo.id"
-            :articulo="articulo"
-            :carrito="carrito"
-            @agregar_articulo_al_carrito="agregar_articulo_al_carrito"
-        ></product>
-    </div>
-
-    <button
-        @click="paginaAnterior()"
-        :disabled="paginaActual === 1"
-        class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-    >
-        Anterior
-    </button>
-    <span>{{ paginaActual }}</span>
-    <button
-        @click="paginaSiguiente()"
-        :disabled="paginaActual >= paginaSiguiente"
-        class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-    >
-        Siguiente
-    </button>
-</div>
-
-<script>
-    Vue.component('Product', {
-        props: {
-            articulo: Object,
-            carrito: Array,
-        },
+        <script>
+    Vue.component('product', {
+        props: ['articulo'],
         template: `
             <div class="flex flex-col md:flex-row border-b border-gray-400 py-4">
                 <div class="flex-shrink-0 w-20 h-auto text-4xl">
@@ -94,11 +100,8 @@
                     <h2 class="text-lg font-bold">{{articulo.title}}</h2>
                     <p class="mt-2 text-gray-600">{{articulo.description}}</p>
                     <div class="mt-4 flex items-center">
-                        <span class="ml-auto font-bold m">{{articulo.price}} €</span>
-                        <button 
-                            style="margin-left: 50px;"
-                            @click="agregar_articulo_al_carrito(articulo.id)" 
-                            class="hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        <span class="ml-auto font-bold">{{articulo.price}} €</span>
+                        <button @click="agregarArticuloAlCarrito(articulo.id, articulo.title, articulo.img, articulo.price)" class="hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                             Añadir al carrito
                         </button>
                     </div>
@@ -106,74 +109,107 @@
             </div>
         `,
         methods: {
-            agregar_articulo_al_carrito(id) {
-                this.$emit('agregar_articulo_al_carrito', id);
-                console.log(this.carrito);
-            },
-        },
-    });
-
-    new Vue({
-        el: '#app',
-        data: {
-            articulos: [],
-            paginaActual: 1,
-            articulosPorPagina: 4,
-            carrito: [],
-            dialogOpen: false,
-            sub_total: 0,
-        },
-        methods: {
-            obtenerArticulos() {
-                fetch('data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        this.articulos = data;
-                    });
-            },
-            paginarArticulos() {
-                return this.articulos.slice((this.paginaActual - 1) * this.articulosPorPagina, this.paginaActual * this.articulosPorPagina);
-            },
-            paginaAnterior() {
-                if (this.paginaActual > 1) {
-                    this.paginaActual--;
-                }
-            },
-            paginaSiguiente() {
-                if (this.paginaActual < Math.ceil(this.articulos.length / this.articulosPorPagina)) {
-                    this.paginaActual++;
-                }
-            },
-            agregar_articulo_al_carrito(id) {
-                this.carrito.push(id);
-            },
-            openDialog() {
-                this.dialogOpen = true;
-            },
-            closeDialog() {
-                this.dialogOpen = false;
-            },
-            calcularSubtotal() {
-            let subtotal = 0;
-            for (const id of this.carrito) {
-                const precio = this.articulos.find(articulo => articulo.id === id).price;
-                subtotal += precio;
+            agregarArticuloAlCarrito(id, title, img, price) {
+                this.$emit('agregar_articulo_al_carrito', { id, title, img, price });
             }
-            return subtotal;
-    },
-
-    eliminarArticuloDelCarrito(id) {
-        const index = this.carrito.indexOf(id);
-        if (index !== -1) {
-            this.carrito.splice(index, 1);
         }
-    }
-        },
-        mounted() {
-            this.obtenerArticulos();
-        },
     });
+
+new Vue({
+    el: '#app',
+    data: {
+        articulos: [],
+        paginaActual: 1,
+        articulosPorPagina: 4,
+        carrito: [],
+        dialogOpen: false,
+        tasasDeCambio: {},
+        selectedCurrency: 'EUR',
+        sub_total: 0,
+    },
+    methods: {
+        obtenerArticulos() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    this.articulos = data;
+                });
+        },
+        paginarArticulos() {
+            return this.articulos.slice((this.paginaActual - 1) * this.articulosPorPagina, this.paginaActual * this.articulosPorPagina);
+        },
+        paginaAnterior() {
+            if (this.paginaActual > 1) {
+                this.paginaActual--;
+            }
+        },
+        paginaSiguiente() {
+            if (this.paginaActual < Math.ceil(this.articulos.length / this.articulosPorPagina)) {
+                this.paginaActual++;
+            }
+        },
+        agregarArticuloAlCarrito(articulo) {
+            const index = this.carrito.findIndex(item => item.id === articulo.id);
+
+            if (index !== -1) {
+                // Si el artículo ya está en el carrito, incrementa la cantidad
+                this.carrito[index].cantidad += 1;
+            } else {
+            // Si el artículo no está en el carrito, agrégalo con cantidad 1
+            this.carrito.push({ ...articulo, cantidad: 1 });
+            }
+        },
+
+
+        openDialog() {
+            this.dialogOpen = true;
+        },
+        closeDialog() {
+            this.dialogOpen = false;
+        },
+
+        eliminarArticuloDelCarrito(id) {
+            this.carrito = this.carrito.filter(articulo => articulo.id !== id);
+        },
+
+        calcularSubtotal() {
+            let subtotal = 0;
+
+            for (const articulo of this.carrito) {
+              const tasa = this.tasasDeCambio[this.selectedCurrency] || 1;  // Si la tasa no está disponible, asumimos 1:1
+              subtotal += articulo.price * articulo.cantidad * tasa;
+            }
+        
+            this.sub_total = subtotal.toFixed(2);
+            return subtotal.toFixed(2);
+        },
+
+        async obtenerTasaDeCambio() {
+          try {
+            const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_pr5k4VmSBLMvYK9pn3tZom0S0baQMw6vWFs8XRKa&currencies=&base_currency=EUR');
+            const data = await response.json();
+
+            // Verifica si la respuesta tiene la estructura esperada
+            if (data && data.data) {
+              this.tasasDeCambio = data.data;
+              return data.data;
+            } else {
+              console.error('La respuesta de la API no tiene la estructura esperada:', data);
+              return null;
+            }
+          } catch (error) {
+            console.error('Error al obtener las tasas de cambio:', error);
+            return null;
+          }
+        },
+
+    },
+    mounted() {
+        this.obtenerArticulos();
+        this.obtenerTasaDeCambio();
+    },
+});
 </script>
 
-</body>
+    </body>
 </html>

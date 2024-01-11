@@ -11,8 +11,8 @@ catalog = Blueprint('catalog', __name__)
 def load_user(user_id):
     try:
         return User.query.get(int(user_id))
-    except:
-        return None
+    except Exception as e:
+        return e
 
 
 @catalog.route('/login', methods=['GET', 'POST'])
@@ -188,6 +188,3 @@ def categorys():
         }
     #return jsonify(res)"""
     return render_template('categories.html', categories=categories, current_user=current_user)
-
-
-
