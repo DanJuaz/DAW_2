@@ -1,7 +1,7 @@
 # Carrito De La Compra (Vue, TailwindCSS)
 
 ## Vue
-<p>Uso vue como los Component</p>
+<p>Uso vue como los Componentes</p>
 
 ```
 Vue.component('product', {
@@ -33,6 +33,13 @@ Vue.component('product', {
 
 
 ## TailwindCSS
-<p>Tailwindcss frameworl css, para maquetar mas rapido y eficientemente código CSS.</p>
+<p>Tailwindcss framework css, para maquetar más rapido y eficientemente código CSS.</p>
 
 ## Speed Wev ( Google Page Speed Insight )
+
+
+|    |      MOBILE      |  DESKTOP |
+|----------|:-------------:|------:|
+| ENLACE|  [Análisis de la página en móvil ](https://pagespeed.web.dev/analysis/https-65a166f0ffa33013621f5aea--lustrous-begonia-f6e9dd-netlify-app/2dhe5vpn1j?form_factor=mobile) | [Análisis de la página en Oredenador ](https://pagespeed.web.dev/analysis/https-65a166f0ffa33013621f5aea--lustrous-begonia-f6e9dd-netlify-app/2dhe5vpn1j?form_factor=desktop) |
+| IMAGÉN |    ![Alt text](image-1.png)   |   ![Alt text](image.png) |
+    

@@ -1,11 +1,19 @@
+<!-- 
+    This HTML file represents a shopping cart application.
+    It includes the necessary HTML structure, CSS styles, and Vue.js code to create a functional shopping cart.
+    The shopping cart allows users to view and add products to their cart, calculate the subtotal, and change the currency.
+    The code is well-organized and follows best practices for Vue.js development.
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <!-- TAILWINDCSS -->
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet">
+        <!-- VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
@@ -108,6 +116,7 @@
                 </div>
             </div>
         `,
+        // Function for the template's button
         methods: {
             agregarArticuloAlCarrito(id, title, img, price) {
                 this.$emit('agregar_articulo_al_carrito', { id, title, img, price });
@@ -118,6 +127,7 @@
 new Vue({
     el: '#app',
     data: {
+        // Global variables
         articulos: [],
         paginaActual: 1,
         articulosPorPagina: 4,
@@ -171,7 +181,7 @@ new Vue({
         eliminarArticuloDelCarrito(id) {
             this.carrito = this.carrito.filter(articulo => articulo.id !== id);
         },
-
+        // Calcular el subtotal, teniendo en cuenta la tasa de cambio
         calcularSubtotal() {
             let subtotal = 0;
 
@@ -183,7 +193,7 @@ new Vue({
             this.sub_total = subtotal.toFixed(2);
             return subtotal.toFixed(2);
         },
-
+        // Llamada a la API para obtener las tasas de cambio
         async obtenerTasaDeCambio() {
           try {
             const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_pr5k4VmSBLMvYK9pn3tZom0S0baQMw6vWFs8XRKa&currencies=&base_currency=EUR');
