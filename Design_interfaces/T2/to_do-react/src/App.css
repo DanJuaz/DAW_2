@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+label{
+  color: #61dafb;
+  font-size: 20px;
+  font-weight: bold;
+  width: 20rem;
+}
+input{
+  width: 20rem;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #61dafb;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+button{
+  width: 20rem;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #61dafb;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #61dafb;
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+}
+button:hover{
+  background-color: white;
+  color: #61dafb;
+  cursor: pointer;
+}
