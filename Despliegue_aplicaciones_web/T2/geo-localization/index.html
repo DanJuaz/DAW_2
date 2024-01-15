@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEO-Localizacion</title>
+</head>
+<body>
+    <h1>Geo localizacion</h1>
+    <button onclick="obtenerGeo()">Iniciar</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    var x = document.getElementById("resultado");
+    function obtenerGeo(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(mostrarPosicion);
+            
+        }else{
+            x.innerHTML = "Geolocalizacion no es soportada por este navegador";
+        }
+    };
+    function mostrarPosicion(posicion){
+        x.innerHTML = "Latitud: " + posicion.coords.latitude + "<br>Longitud: " + posicion.coords.longitude;
+        x.innerHTML += "<br>Exactitud: " + posicion.coords.accuracy + " metros.";
+        x.innerHTML += "<br>JSON: " + posicion.coords ;
+    }
+
+</script>
+</html>
