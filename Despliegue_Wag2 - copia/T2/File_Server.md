@@ -4,7 +4,7 @@
    -![Alt text](img/Unidad_Organizativa_NZ.png)
 
 **2, 3, 4. Crear los grupos,  Añadir usuarios a los grupos:**
-   - Desde la misma herramienta "Active Directory Users and Computers," crear los grupos GContabilidad, GRRHH, GSistemas, GDesarrollo.
+   - Desde la misma herramienta "Active Directory Users and Computers," crear los grupos **GContabilidad**, GRRHH, GSistemas, GDesarrollo.
    - Agrega usuarios a los grupos correspondientes utilizando la herramienta "Active Directory Users and Computers."
    -![Alt text](img/image.png)
    -![Alt text](img/image-1.png)
@@ -40,5 +40,14 @@
    -![Alt text](image-5.png)
    -![Alt text](image-6.png)
 
-**11. Habilitar la auditoría para un usuario específico en una carpeta:**
-**12. Probar eliminar archivos y crear carpetas:**
+**11,12. Habilitar la auditoría para un usuario específico en una carpeta, Probar eliminar archivos y crear carpetas:**
+   -![Alt text](image-8.png)
+   -![Alt text](image-9.png)
+   -![Alt text](image-10.png)
+   -Hay que crear una auditoria para Nz támbien, en Domain controllers
+   -![Alt text](image-11.png)
+   -![Alt text](image-12.png)
+   -Aquí popdemos ver que el usuario UContabilidad solo puede acceder a la carpeta Contabilidad
+   -![Alt text](image-7.png)
+
+
