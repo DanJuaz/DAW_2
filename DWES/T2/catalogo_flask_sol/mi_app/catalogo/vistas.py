@@ -96,6 +96,37 @@ def create_product():
     #return 'Product created.'
     return render_template('producto.html', product=product)
     '''
+@catalog.route('/product-delete/<int:id>')
+@login_required
+def delete_product(id):
+    product = Product.query.get_or_404(id)
+    db.session.delete(product)
+    db.session.commit()
+    flash(f'The product {product.name} has been deleted', 'success')
+    return(redirect(url_for('catalog.products')))
+
+@catalog.route('/product-update/<int:id>', methods=['GET','POST'])
+@login_required
+def update_product(id):
+    product = Product.query.get_or_404(id)
+    form = ProductForm(meta={'csrf': False})
+    categories = [(c.id, c.name) for c in Category.query.all()]
+    form.category.choices = categories
+    if form.validate_on_submit():
+        product.name = form.name.data
+        product.price = form.price.data
+        product.category = Category.query.get_or_404(form.category.data)
+        db.session.commit()
+        flash(f'The product {product.name} has been updated', 'success')
+        return redirect(url_for('catalog.product', id=product.id))
+
+    if form.errors:
+        flash(form.errors, 'danger')
+
+    form.name.data = product.name
+    form.price.data = product.price
+    form.category.data = product.category.id
+    return render_template('producto.html', form=form, product=product)
 
 @catalog.route('/category-create', methods=['GET'])
 # ejemplo url: http://127.0.0.1:5000/category-create?name=nuevaCategory

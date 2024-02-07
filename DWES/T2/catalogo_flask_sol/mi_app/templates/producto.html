@@ -1,10 +1,15 @@
 {% extends 'home.html' %}
 
 {% block container %}
-  <div>
-    <h1>Producto: {{ product.name }}</h1>
-    <h3>Categoría: {{ product.category.name }}</h3>
-    <h5>Precio(€): {{ product.price }}</h5>
-    <a href="{{ url_for('catalog.products') }}">Volver a productos</a>
-  </div>
+<div>
+  <form method="POST"
+    action="{{ url_for('catalog.update_product', id=product.id) }}"
+    role="form">
+    <div>{{ form.name.label }}: {{ form.name() }}</div>
+    <div>{{ form.price.label }}: {{ form.price() }}</div>
+    <div>{{ form.category.label }}: {{ form.category() }}</div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+<a href="{{ url_for('catalog.products') }}">Volver a productos</a>
 {% endblock %}
