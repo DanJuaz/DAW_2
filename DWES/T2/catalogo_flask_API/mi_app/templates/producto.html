@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block container %}
+  <div>
+    <h1>Producto: {{ product.name }}</h1>
+    <h3>Categoría: {{ product.category }}</h3>
+    <h5>Precio(€): {{ product.price }}</h5>
+    <a href="{{ url_for('catalog.products') }}">Volver a productos</a>
+  </div>
+{% endblock %}
