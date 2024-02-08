@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block container %}
+  <div>
+    <form method="POST"
+        action="{{ url_for('news.crear_noticia') }}"
+        role="form">
+      <div>{{ form.title.label }}: {{ form.title() }}</div>
+      <div>{{ form.resumen.label }}: {{ form.resumen() }}</div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+{% endblock %}

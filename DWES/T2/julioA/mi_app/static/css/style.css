@@ -1,0 +1,29 @@
+body {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-top: 5px;
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+div{
+margin-top:20px;
+margin-left:20px;
+}
+header{
+display:flex;
+flex-direction:row;
+}
+header div{
+    margin-right:5px;
+}
+button{
+    margin-left:20px;
+    margin-top:5px;
+    background-color:blue;
+    color:white;
+    padding: 5px;
+}
+a{
+margin-top:5px
+}

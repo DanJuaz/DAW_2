@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+
+{% block container %}
+  <div>
+    <h1>Crear nuevo Noticia
+    <a href="{{ url_for('news.crear_noticia') }}">Formulario</a>
+  </h1>
+  {% for notice in notices.items %}
+      <div>
+        <h2>
+          <h3 >{{ notice.title }}</h3>
+          <small>{{ notice.resumen }}</small>
+        </h2>
+      </div>
+    {% endfor %}
+    {% if notices.has_prev %}
+      <a href="{{ url_for(request.endpoint, page=notices.prev_num) }}">
+        {{"Page"}}
+      </a>
+    {% else %}
+      {{"Previous"}}
+    {% endif %} |
+    {% if notices.has_next %}
+      <a href="{{ url_for(request.endpoint, page=notices.next_num) }}">
+        {{"Next"}}
+      </a>
+    {% else %}
+      {{"Next"}}
+    {% endif %}
+  </div>
+{% endblock %}
