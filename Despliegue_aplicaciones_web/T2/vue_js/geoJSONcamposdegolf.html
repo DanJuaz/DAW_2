@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Quick Start - Leaflet</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+
+
+<div id="map" style="width: 600px; height: 400px;"></div>
+<script>
+
+	const map = L.map('map').setView([43.3061888, -1.9791872], 13);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	const datos={
+  "type" : "FeatureCollection",
+  "name" : "Campos de golf de Euskadi",
+  "features" : [ {
+    "id" : 1,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -3.06299698, 43.28828861 ]
+    },
+    "properties" : {
+      "documentname" : "Meaztegi Golf",
+      "documentdescription" : "Campo inaugurado en 2006, diseñado por Severiano Ballesteros y supervisado por Trajectory,...",
+      "templatetype" : "Instalaciones deportivas",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "recepcion@meaztegigolf.eus",
+      "web" : "http://meaztegigolf.eus/",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Ortuella",
+      "municipalitycode" : "083",
+      "territory" : "Bizkaia",
+      "territorycode" : "48",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/meaztegi-golf/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000002748_i2_rec_turismo/es_2748/2748-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000002748_i2_rec_turismo/es_2748/data/2748_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000002748_i2_rec_turismo/r01Index/0000002748_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000002748_i2_rec_turismo/opendata/0000002748_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 2,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.514495849609375, 42.65971666222626 ]
+    },
+    "properties" : {
+      "documentname" : "Izki Golf",
+      "documentdescription" : "Complejo golfístico creado por la Diputación Foral de Alava. El campo de Izki Golf&...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Urturi",
+      "marks" : "Montes y Valles vascos",
+      "qualityassurance" : "1",
+      "tourismemail" : "recepcion@izkigolf.eus",
+      "web" : "https://www.izkigolf.eus/",
+      "capacity" : "Salidas: 36 jugadores por cada hora. Más de 400 personas al día.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Bernedo",
+      "municipalitycode" : "016",
+      "territory" : "Araba/Álava",
+      "territorycode" : "01",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/campo-de-urturi-complejo-izki-golf/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000008181_i2_rec_turismo/es_8181/8181-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008181_i2_rec_turismo/es_8181/data/8181_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008181_i2_rec_turismo/r01Index/0000008181_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008181_i2_rec_turismo/opendata/0000008181_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 3,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.6209259033203125, 42.96496504291173 ]
+    },
+    "properties" : {
+      "documentname" : "Golf de Larrabea",
+      "documentdescription" : "Complejo situado en un bello paraje con vistas a los pantanos de Urrunaga y Ullibarri. Su recorri...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Legutio",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "info@larrabea.com",
+      "web" : "http://www.larrabea.com",
+      "capacity" : "Salidas: 1.000 personas. Bar-restaurante: 220 personas",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Legutio",
+      "municipalitycode" : "058",
+      "territory" : "Araba/Álava",
+      "territorycode" : "01",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/golf-de-larrabea/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000008281_i2_rec_turismo/es_8281/8281-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008281_i2_rec_turismo/es_8281/data/8281_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008281_i2_rec_turismo/r01Index/0000008281_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008281_i2_rec_turismo/opendata/0000008281_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 4,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.86821214, 42.96585901 ]
+    },
+    "properties" : {
+      "documentname" : "Zuia Club de Golf",
+      "documentdescription" : "Campo situado en Altube, junto al área de servicio de la autopista Zaragoza-Bilbao y a 20 ...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Altube | Diseminado",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "zuiagolf@zuiagolf.e.telefonica.net",
+      "capacity" : "60 personas.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Zuia",
+      "municipalitycode" : "063",
+      "territory" : "Araba/Álava",
+      "territorycode" : "01",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/zuia-club-de-golf/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000008343_i2_rec_turismo/es_8343/8343-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008343_i2_rec_turismo/es_8343/data/8343_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008343_i2_rec_turismo/r01Index/0000008343_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008343_i2_rec_turismo/opendata/0000008343_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 5,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.8372283127099536, 43.251314121293774 ]
+    },
+    "properties" : {
+      "documentname" : "Uraburu Golf",
+      "documentdescription" : "Club de golf diseñado por José María Olazabal y ubicado junto al monte Gangu...",
+      "templatetype" : "Instalaciones deportivas",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "info@uraburugolf.com",
+      "web" : "http://www.uraburugolf.com",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Galdakao",
+      "municipalitycode" : "036",
+      "territory" : "Bizkaia",
+      "territorycode" : "48",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/uraburu-golf/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000008382_i2_rec_turismo/es_8382/8382-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008382_i2_rec_turismo/es_8382/data/8382_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008382_i2_rec_turismo/r01Index/0000008382_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000008382_i2_rec_turismo/opendata/0000008382_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 6,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -3.0267333984375, 43.37192676085973 ]
+    },
+    "properties" : {
+      "documentname" : "Real Sociedad de Golf de Neguri",
+      "documentdescription" : "Inaugurado en 1911 y diseñado por D. Javier Arana el campo de golf de Neguri es un club pr...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Algorta",
+      "marks" : "Costa Vasca,Bilbao",
+      "tourismemail" : "rsgn@rsgolfneguri.com",
+      "web" : "http://www.rsgolfneguri.com/",
+      "room" : "1",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Getxo",
+      "municipalitycode" : "044",
+      "territory" : "Bizkaia",
+      "territorycode" : "48",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/real-sociedad-de-golf-de-neguri/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009288_i2_rec_turismo/es_9288/9288-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009288_i2_rec_turismo/es_9288/data/9288_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009288_i2_rec_turismo/r01Index/0000009288_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009288_i2_rec_turismo/opendata/0000009288_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 7,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.8499199124267527, 43.32904023631037 ]
+    },
+    "properties" : {
+      "documentname" : "Laukariz Club de Campo",
+      "documentdescription" : "El Club de Campo Laukariz es un complejo privado dedicado al deporte y el ocio familiar. Est&aacu...",
+      "templatetype" : "Instalaciones deportivas",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "cclaukariz@euskalnet.net",
+      "web" : "http://www.cclaukariz.com",
+      "capacity" : "1.100 personas aproximadamente.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Mungia",
+      "municipalitycode" : "069",
+      "territory" : "Bizkaia",
+      "territorycode" : "48",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/laukariz-club-de-campo/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009304_i2_rec_turismo/es_9304/9304-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009304_i2_rec_turismo/es_9304/data/9304_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009304_i2_rec_turismo/r01Index/0000009304_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009304_i2_rec_turismo/opendata/0000009304_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 8,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -1.96440921, 43.28781704 ]
+    },
+    "properties" : {
+      "documentname" : "Real Nuevo Club Golf de San Sebastián Basozabal",
+      "documentdescription" : "Campo de golf diseñado en 1992 por el jugador profesional José María Olaz&aa...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Donostia / San Sebastián",
+      "marks" : "San Sebastián,Costa Vasca",
+      "tourismemail" : "recepcion@golfbasozabal.com",
+      "web" : "http://www.golfbasozabal.com",
+      "capacity" : "440 personas.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Donostia / San Sebastián",
+      "municipalitycode" : "069",
+      "territory" : "Gipuzkoa",
+      "territorycode" : "20",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/real-nuevo-club-golf-de-san-sebastian-basozabal/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009386_i2_rec_turismo/es_9386/9386-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009386_i2_rec_turismo/es_9386/data/9386_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009386_i2_rec_turismo/r01Index/0000009386_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009386_i2_rec_turismo/opendata/0000009386_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 9,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.0284337910461403, 43.203027412136926 ]
+    },
+    "properties" : {
+      "documentname" : "Goiburu Golf",
+      "documentdescription" : "Club de glof situado en un entorno natural, en el valle de Leizaran y cerca de Donostia-San Sebas...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Andoain",
+      "marks" : "Montes y Valles vascos",
+      "tourismemail" : "goiburu@goiburugolfclub.com",
+      "web" : "https://goiburugolf.com/",
+      "capacity" : "500 personas.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Andoain",
+      "municipalitycode" : "009",
+      "territory" : "Gipuzkoa",
+      "territorycode" : "20",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/goiburu-golf/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009392_i2_rec_turismo/es_9392/9392-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009392_i2_rec_turismo/es_9392/data/9392_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009392_i2_rec_turismo/r01Index/0000009392_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009392_i2_rec_turismo/opendata/0000009392_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 10,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -1.8261337280273438, 43.33591630124594 ]
+    },
+    "properties" : {
+      "documentname" : "Real Golf Club de San Sebastián",
+      "documentdescription" : "Campo de golf inaugurado en 1968 sustituyendo a las anteriores instalaciones del Real Golf Club d...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Jaitzubia",
+      "marks" : "Costa Vasca",
+      "tourismemail" : "rgcss@golfsansebastian.com",
+      "web" : "http://www.golfsansebastian.com",
+      "room" : "1",
+      "capacity" : "900 personas.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Hondarribia",
+      "municipalitycode" : "036",
+      "territory" : "Gipuzkoa",
+      "territorycode" : "20",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/real-golf-club-de-san-sebastian/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009441_i2_rec_turismo/es_9441/9441-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009441_i2_rec_turismo/es_9441/data/9441_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009441_i2_rec_turismo/r01Index/0000009441_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009441_i2_rec_turismo/opendata/0000009441_i2_rec_turismo.zip"
+    }
+  }, {
+    "id" : 11,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -2.16013432, 43.2867568 ]
+    },
+    "properties" : {
+      "documentname" : "Real Golf Club de Zarautz",
+      "documentdescription" : "Campo de tipo links, situado al borde del mar e inaugurado en 1916. Cuenta con nueve hoyos, par 6...",
+      "templatetype" : "Instalaciones deportivas",
+      "locality" : "Zarautz",
+      "marks" : "Costa Vasca",
+      "tourismemail" : "info@golfzarauz.com",
+      "web" : "http://www.golfzarauz.com",
+      "capacity" : "Más de 300 personas.",
+      "sporttype" : "Campo de golf",
+      "municipality" : "Zarautz",
+      "municipalitycode" : "079",
+      "territory" : "Gipuzkoa",
+      "territorycode" : "20",
+      "country" : "España",
+      "countrycode" : "108",
+      "friendlyurl" : "https://turismoa.euskadi.eus/es/instalaciones-deportivas/real-golf-club-de-zarautz/aa30-12375/es/",
+      "physicalurl" : "https://turismoa.euskadi.eus/aa30-12375/es/contenidos/i_deportes/0000009467_i2_rec_turismo/es_9467/9467-ficha2.html",
+      "dataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009467_i2_rec_turismo/es_9467/data/9467_openData.xml",
+      "metadataxml" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009467_i2_rec_turismo/r01Index/0000009467_i2_rec_turismo-idxContent.xml",
+      "zipfile" : "https://turismoa.euskadi.eus/contenidos/i_deportes/0000009467_i2_rec_turismo/opendata/0000009467_i2_rec_turismo.zip"
+    }
+  } ]
+};
+
+    L.geoJSON(datos,{
+      onEachFeature: function(feature,layer){
+        layer.bindPopup(
+            `Nombre: `+feature.properties.documentname+`<br>`+
+            `Localidad: `+feature.properties.municipality+`<br>`+
+            `Web: <a href="`+feature.properties.web+`">`+feature.properties.web+`</a>`
+        );
+      }
+    }
+    ).addTo(map);
+	
+
+	
+
+</script>
+
+
+
+</body>
+</html>
