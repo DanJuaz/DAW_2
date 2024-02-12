@@ -1,23 +1,23 @@
 # FILE SERVER
 
 **1. Crear la estructura de UO en tu servidor:**
-   -![Alt text](img/Unidad_Organizativa_NZ.png)
+   -![Alt text](../img/Unidad_Organizativa_NZ.png)
 
 **2, 3, 4. Crear los grupos,  Añadir usuarios a los grupos:**
    - Desde la misma herramienta "Active Directory Users and Computers," crear los grupos **GContabilidad**, GRRHH, GSistemas, GDesarrollo.
    - Agrega usuarios a los grupos correspondientes utilizando la herramienta "Active Directory Users and Computers."
-   -![Alt text](img/image.png)
-   -![Alt text](img/image-1.png)
-   -![Alt text](img/image-2.png)
-   -![Alt text](img/image-3.png)
+   -![Alt text](../img/image.png)
+   -![Alt text](../img/image-1.png)
+   -![Alt text](../img/image-2.png)
+   -![Alt text](../img/image-3.png)
 
 **5. Deshabilitar herencia de permisos:**
    - En la confuguracion de recusos compartidos, especificando los permisos para el control de acceso, en persimos personalizados, deshabilitar la herencia.
-   -![Alt text](img/image-4.png)
+   -![Alt text](../img/image-4.png)
 
 **6. Habilitar enumeración basada en accesos:**
    - En los parametros de la configuracion de recursos compartidos habilitar las casilla 
-   -![Alt text](img/image-5.png)
+   -![Alt text](../img/image-5.png)
 
 **7. Mapear unidades de red:**
    - Desde las propeidades del Miembro del Perfil selecionamos la opción de conectar y la configuramos con la ruta y aplicamos los cambios,
